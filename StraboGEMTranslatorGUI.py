@@ -54,8 +54,9 @@ def Start_Funtion():
     input_DSID = e2Var.get()
     input_LSID = e3Var.get()
     input_OSID = e4Var.get()
+    input_DatasetName = e5Var.get()
     
-    Errors, sp_count = SGT.Translator(input_File, input_DSID, input_LSID, input_OSID, input_Dest)  
+    Errors, sp_count = SGT.Translator(input_File, input_DSID, input_LSID, input_OSID, input_Dest, input_DatasetName)  
     ErrorStr = (str(sp_count) + " StraboSpot(s) processed with " + str(Errors) + " known errors")
     error_label.config(text = ErrorStr)    
     if Errors > 0:
@@ -263,6 +264,7 @@ GUI = tk.Tk()
 e2Var=tk.StringVar()
 e3Var=tk.StringVar()
 e4Var=tk.StringVar()
+e5Var=tk.StringVar()
 #file_label = tk.StringVar().set("File")
 GUI.title("Strabo to GeMS Translator")
 GUI.geometry('1200x800')
@@ -273,21 +275,24 @@ tk.Label(GUI, text='Step 1: Set User Variables', font = ("Times New Roman", 12),
 tk.Label(GUI, text='Input JSON file:', font = ("Times New Roman", 10)).place(x=20, y=40)
 tk.Button(GUI, text ='Open', command = lambda:open_file()).place(x=200, y=40, width=100)
 file_label = tk.Label(GUI, text="", font = ("Times New Roman", 10), bg="white", fg="blue", width=60, padx=0, wraplength=350, anchor=tk.W, justify=tk.LEFT, relief=tk.GROOVE)
-file_label.place(x=20, y=80)
+file_label.place(x=20, y=70)
 
-tk.Label(GUI, text='User Data Source ID:', font = ("Times New Roman", 10)).place(x=20, y=160)
-e2 = tk.Entry(GUI, textvariable= e2Var, font = ("Times New Roman", 10)).place(x=200, y=160)
+tk.Label(GUI, text='User Data Source ID:', font = ("Times New Roman", 10)).place(x=20, y=130)
+e2 = tk.Entry(GUI, textvariable= e2Var, font = ("Times New Roman", 10)).place(x=200, y=130)
 
-tk.Label(GUI, text='User Location Source ID:', font = ("Times New Roman", 10)).place(x=20, y=180)
-e3 = tk.Entry(GUI, textvariable= e3Var, font = ("Times New Roman", 10)).place(x=200, y=180)
+tk.Label(GUI, text='User Location Source ID:', font = ("Times New Roman", 10)).place(x=20, y=150)
+e3 = tk.Entry(GUI, textvariable= e3Var, font = ("Times New Roman", 10)).place(x=200, y=150)
 
-tk.Label(GUI, text='User Orientation Source ID:', font = ("Times New Roman", 10)).place(x=20, y=200)
-e4 = tk.Entry(GUI, textvariable= e4Var, font = ("Times New Roman", 10)).place(x=200, y=200)
+tk.Label(GUI, text='User Orientation Source ID:', font = ("Times New Roman", 10)).place(x=20, y=170)
+e4 = tk.Entry(GUI, textvariable= e4Var, font = ("Times New Roman", 10)).place(x=200, y=170)
 
-tk.Label(GUI, text='Output JSON file location:', font = ("Times New Roman", 10)).place(x=20, y=240)
-tk.Button(GUI, text ='Set', command = lambda:dest_file()).place(x=200, y=240, width=100)
+tk.Label(GUI, text='Output JSON file location:', font = ("Times New Roman", 10)).place(x=20, y=210)
+tk.Button(GUI, text ='Set', command = lambda:dest_file()).place(x=200, y=210, width=100)
 dest_label = tk.Label(GUI, text="", font = ("Times New Roman", 10), bg="white", fg="blue", width=60, padx=0, wraplength=350, anchor=tk.W, justify=tk.LEFT, relief=tk.GROOVE)
-dest_label.place(x=20, y=280)
+dest_label.place(x=20, y=240)
+
+tk.Label(GUI, text='Output Dataset Name:', font = ("Times New Roman", 10)).place(x=20, y=300)
+e5 = tk.Entry(GUI, textvariable= e5Var, font = ("Times New Roman", 10)).place(x=200, y=300)
 
 ##########################################
 ### Custom Options GUI Tabs build

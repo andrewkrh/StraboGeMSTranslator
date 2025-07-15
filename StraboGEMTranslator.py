@@ -30,7 +30,7 @@ global CONFIG
 
 
 
-def Translator(strabo_JSON_file, user_input_DSID, user_input_LSID, user_input_OSID, export_JSON_Dest):
+def Translator(strabo_JSON_file, user_input_DSID, user_input_LSID, user_input_OSID, export_JSON_Dest, dataset_name):
 
     import json
     import StraboUtils as SU
@@ -67,31 +67,31 @@ def Translator(strabo_JSON_file, user_input_DSID, user_input_LSID, user_input_OS
     #### check that these are Arc-readable JSON, boooo esri
     #### Consider adding DB Name to filenames (user input in GUI)
     #print(GM_ContactsAndFaults)
-    jsonpath = base/("GeMS_ContactsAndFaults.json")
+    jsonpath = base/(dataset_name + "_ContactsAndFaults.json")
     jsonpath.write_text(json.dumps(GM_ContactsAndFaults, indent=2))
     
-    jsonpath = base/("GeMS_GeologicLines.json")
+    jsonpath = base/(dataset_name + "_GeologicLines.json")
     jsonpath.write_text(json.dumps(GM_GeologicLines, indent=2))
     
-    jsonpath = base/("GeMS_MapUnitLines.json")
+    jsonpath = base/(dataset_name + "_MapUnitLines.json")
     jsonpath.write_text(json.dumps(GM_MapUnitLines, indent=2))
     
-    jsonpath = base/("GeMS_CartographicLines.json")
+    jsonpath = base/(dataset_name + "_CartographicLines.json")
     jsonpath.write_text(json.dumps(GM_CartographicLines, indent=2))
     
-    jsonpath = base/("GeMS_Stations.json")
+    jsonpath = base/(dataset_name + "_Stations.json")
     jsonpath.write_text(json.dumps(GM_Stations, indent=2))
     
-    jsonpath = base/("GeMS_GenericSamples.json")
+    jsonpath = base/(dataset_name + "_GenericSamples.json")
     jsonpath.write_text(json.dumps(GM_GenericSamples, indent=2))
     
-    jsonpath = base/("GeMS_OrientationPoints.json")
+    jsonpath = base/(dataset_name + "_OrientationPoints.json")
     jsonpath.write_text(json.dumps(GM_OrientationPoints, indent=2))
     
-    jsonpath = base/("GeMS_MapUnitPoints.json")
+    jsonpath = base/(dataset_name + "_MapUnitPoints.json")
     jsonpath.write_text(json.dumps(GM_MapUnitPoints, indent=2))
     
-    jsonpath = base/("GeMS_MapUnitPolyLabels.json")
+    jsonpath = base/(dataset_name + "_MapUnitPolyLabels.json")
     jsonpath.write_text(json.dumps(GM_MapUnitPolyLabels, indent=2))
     
     return errors, sp_count
