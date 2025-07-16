@@ -1,13 +1,13 @@
 # StraboGeMSTranslator
-Converts Strabo JSON Database to a GeMS Compliant JSON.
+Converts Strabo JSON Database to a GeMS compliant JSON.
 
-This project is designed to streamline the the process of making StraboField Datasets ready for GeMS Compliant publication. The resulting files are JSONs with GeMS attributes derived from the StraboField user inputs. Files generated from these scripts can be imported into an Arc GeoDatabase using the Import JSON tool in ArcPro. Features within a StraboField Dataset are divided by feature class and assigned attributes consistent with the GeMS database standards. 
+This project is designed to streamline the the process of making StraboField Datasets ready for GeMS compliant publication. The resulting files are JSONs with GeMS attributes derived from the StraboField user inputs. Files generated from these scripts can be imported into an Arc GeoDatabase using the Import JSON tool in ArcPro. Features within a StraboField Dataset are divided by feature class and assigned attributes consistent with the GeMS database standards. 
 
-Note: this translation is unidirectional, meaning that if data is manipulated within the Arc GeoDatabase the changes will not be reflected in the StraboField Dataset. Designing a workflow that does not require repeated field edits is suggested. Suggested workflows include 1) maintaining different StraboField Datasets for each field excursion, and 2) using GeoDatabase data to building basemaps tiles for StraboField (tiles are uneditable).
+Note: this translation is unidirectional, meaning that if data is manipulated within the Arc GeoDatabase the changes will not be reflected in the StraboField Dataset. Designing a workflow that does not require repeated field edits is suggested. Suggested workflows include 1) maintaining different StraboField Datasets for each field excursion, and 2) using GeoDatabase data to build basemaps tiles for StraboField (tiles are uneditable).
 
 Start by downloading a GeoJSON version of a dataset from the StraboSpot server (any project). Download the entire directory published here and run StraboGEMTraslatorGUI.py in a python environment (eg. spyder). 
 
-Steps for Operation
+Steps for Operation:
 
 -Run StraboGEMTraslatorGUI.py
 
