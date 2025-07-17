@@ -1,5 +1,6 @@
 # StraboGeMSTranslator
-Converts Strabo JSON Database to a GeMS compliant JSON.
+Converts Strabo JSON Databases to a GeMS compliant JSONs.
+Developed at the New Mexico Burearu of Geology and Mineral Resources.
 
 This project is designed to streamline the the process of making StraboField Datasets ready for GeMS compliant publication. The resulting files are JSONs with GeMS attributes derived from the StraboField user inputs. Files generated from these scripts can be imported into an Arc GeoDatabase using the Import JSON tool in ArcPro. Features within a StraboField Dataset are divided by feature class and assigned attributes consistent with the GeMS database standards. 
 
