@@ -430,7 +430,7 @@ def getSBLineTraceString(sb_line_prop):
     trace_type = ""
     
     for v in trace_dict:
-        if v != "trace_feature" and v != "modified_timestamp":
+        if "type" in v or "quality" in v:
             trace_type = trace_type + trace_dict[v] + " "
         else: None
 
@@ -574,9 +574,8 @@ def getSBOrientationString(sb_orientation_dict):
     ### takes Strabo measurement dict and returns a string description
     
     or_type = ""
-    
     for v in sb_orientation_dict:
-        if v != "id" and v != "strike" and v != "dip" and v != "trend" and v != "plunge" and v != "unix_timestamp" and v != "quality" and v != "modified_timestamp":
+        if "type" in v:
             or_type = or_type + sb_orientation_dict[v] + " "
         else: None
         
